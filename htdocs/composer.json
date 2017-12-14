@@ -1,0 +1,5 @@
+{
+    "require": {
+        "anax/request": "^1.0"
+    }
+}
