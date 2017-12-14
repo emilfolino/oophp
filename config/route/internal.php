@@ -1,6 +1,6 @@
 <?php
 
-$app->router->addInternal("404", function () use ($app){
+$app->router->addInternal("404", function () use ($app) {
     $body = <<<EOD
 <!doctype html>
 <meta charset="utf-8">
@@ -9,6 +9,5 @@ $app->router->addInternal("404", function () use ($app){
 <p>The route could not be found!</p>
 EOD;
 
-$app->response->setBody($body)
-              ->send(404);
+    $app->response->setBody($body)->send(404);
 });

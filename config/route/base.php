@@ -1,49 +1,25 @@
 <?php
 
 $app->router->add("", function () use ($app) {
-    $urlHome  = $app->url->create("");
-    $urlAbout = $app->url->create("about");
-    $navbar = <<<EOD
-<navbar>
-    <a href="$urlHome">Home</a> |
-    <a href="$urlAbout">About</a>
-</navbar>
-EOD;
+    $app->view->add("take1/header", ["title" => "Home"]);
+    $app->view->add("take1/navbar");
+    $app->view->add("take1/container");
+    $app->view->add("take1/home");
+    $app->view->add("take1/footer");
 
-    $body = <<<EOD
-<!doctype html>
-<meta charset="utf-8">
-<title>Home</title>
-$navbar
-<h1>Home</h1>
-<p>This is the homepage.</p>
-EOD;
-
-    $app->response->setBody($body)
-          ->send();
+    $app->response->setBody([$app->view, "render"])
+                  ->send();
 });
 
 $app->router->add("about", function () use ($app) {
-    $urlHome  = $app->url->create("");
-    $urlAbout = $app->url->create("about");
-    $navbar = <<<EOD
-<navbar>
-    <a href="$urlHome">Home</a> |
-    <a href="$urlAbout">About</a>
-</navbar>
-EOD;
+    $app->view->add("take1/header", ["title" => "Home"]);
+    $app->view->add("take1/navbar");
+    $app->view->add("take1/container");
+    $app->view->add("take1/about");
+    $app->view->add("take1/footer");
 
-    $body = <<<EOD
-<!doctype html>
-<meta charset="utf-8">
-<title>About</title>
-$navbar
-<h1>About</h1>
-<p>This is the page about me.</p>
-EOD;
-
-    $app->response->setBody($body)
-          ->send();
+    $app->response->setBody([$app->view, "render"])
+                  ->send();
 });
 
 $app->router->add("debug", function () use ($app) {

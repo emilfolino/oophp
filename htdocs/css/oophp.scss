@@ -1,0 +1,16 @@
+.navbar-brand>.navbar-item {
+    font-family: $family-headers;
+    font-weight: $brand-weight;
+    font-size: 3em;
+}
+
+.navbar-end>.navbar-item {
+    font-family: $family-headers;
+    font-weight: $brand-weight;
+    font-size: 1.6em;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $family-headers;
+}
