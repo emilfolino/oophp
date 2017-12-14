@@ -19,7 +19,8 @@ $navbar
 <p>This is the homepage.</p>
 EOD;
 
-    echo $body;
+    $app->response->setBody($body)
+          ->send();
 });
 
 $app->router->add("about", function () use ($app) {
@@ -41,7 +42,8 @@ $navbar
 <p>This is the page about me.</p>
 EOD;
 
-    echo $body;
+    $app->response->setBody($body)
+          ->send();
 });
 
 $app->router->add("debug", function () use ($app) {
@@ -71,5 +73,18 @@ $routes
 $intRoutes
 EOD;
 
-    echo $body;
+    $app->response->setBody($body)
+          ->send();
+});
+
+$app->router->add("status", function () use ($app) {
+    $data = [
+        "Server" => php_uname(),
+        "PHP version" => phpversion(),
+        "Included files" => count(get_included_files()),
+        "Memory used" => memory_get_peak_usage(true),
+        "Execution time" => microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'],
+    ];
+
+    $app->response->sendJson($data);
 });

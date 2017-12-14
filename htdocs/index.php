@@ -15,6 +15,7 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 // Add all resources to $app
 $app = new \Efo\App\App();
 $app->request = new \Anax\Request\Request();
+$app->response = new \Anax\Response\Response();
 $app->url     = new \Anax\Url\Url();
 $app->router  = new \Anax\Route\RouterInjectable();
 
