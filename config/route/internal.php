@@ -1,6 +1,6 @@
 <?php
 
-$router->addInternal("404", function () {
+$app->router->addInternal("404", function () {
     echo <<<EOD
 <!doctype html>
 <meta charset="utf-8">
