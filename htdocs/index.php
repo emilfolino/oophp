@@ -20,6 +20,7 @@ $app->url      = new \Anax\Url\Url();
 $app->router   = new \Anax\Route\RouterInjectable();
 $app->view     = new \Anax\View\ViewContainer();
 $app->navbar   = new \Efo\Navbar\Navbar();
+$app->session  = new \Efo\Session\Session();
 
 
 // Inject $app into the view container for use in view files.
@@ -44,6 +45,9 @@ $app->url->setDefaultsFromConfiguration();
 
 $app->navbar->configure("navbar.php");
 $app->navbar->setApp($app);
+
+$app->session->configure("session.php");
+$app->session->setApp($app);
 
 // Load the routes
 require ANAX_INSTALL_PATH . "/config/route.php";

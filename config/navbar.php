@@ -15,5 +15,9 @@ return [
             "text" => "About",
             "route" => "about",
         ],
+        "session" => [
+            "text" => "Session",
+            "route" => "session",
+        ],
     ]
 ];
