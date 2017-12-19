@@ -5,7 +5,7 @@ $urlCSS = $app->url->asset("css/default.css");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>oophp</title>
+    <title><?= isset($title) ? $title : "oophp" ?></title>
     <link rel="stylesheet" href="<?= $urlCSS ?>">
 </head>
 <body>

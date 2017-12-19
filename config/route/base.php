@@ -12,7 +12,7 @@ $app->router->add("", function () use ($app) {
 });
 
 $app->router->add("about", function () use ($app) {
-    $app->view->add("take1/header", ["title" => "Home"]);
+    $app->view->add("take1/header", ["title" => "About"]);
     $app->view->add("take1/navbar");
     $app->view->add("take1/container");
     $app->view->add("take1/about");
