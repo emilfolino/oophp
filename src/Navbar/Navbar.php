@@ -12,9 +12,9 @@ class Navbar implements
     use \Anax\Common\ConfigureTrait,
         \Anax\Common\AppInjectableTrait;
     /**
-     * Get HTML for the navbar.
+     * Get Links for the navbar.
      *
-     * @return string as HTML with the navbar.
+     * @return string as Links with the navbar.
      */
     public function getLinks()
     {
@@ -24,5 +24,15 @@ class Navbar implements
         }
 
         return $links;
+    }
+
+    /**
+     * Get Home link for the brand in navbar.
+     *
+     * @return string as url with the link home.
+     */
+    public function getHomeLink()
+    {
+        return ($this->config["items"]["home"]) ? $this->app->url->create($this->config["items"]["home"]["route"]) : "/";
     }
 }
